@@ -1,0 +1,31 @@
+
+# STM32CubeIDE build outputs
+/Debug/
+/Release/
+
+# Compiler-generated files
+*.o
+*.d
+*.su
+*.cyclo
+
+# Firmware binary outputs
+*.elf
+*.bin
+*.hex
+*.map
+*.list
+*.size.stdout
+
+# Eclipse workspace metadata
+.metadata/
+
+# Temporary files
+*.log
+*.tmp
+*.bak
+*.swp
+
+# Operating system files
+Thumbs.db
+.DS_Store
