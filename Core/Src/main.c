@@ -97,18 +97,19 @@ int main(void)
   /* Initialize leds */
   BSP_LED_Init(LED2);
 
+
   App_Init();
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
   while (1)
   {
-
     /* USER CODE END WHILE */
 	App_Run();
     /* USER CODE BEGIN 3 */
   }
   /* USER CODE END 3 */
+
 }
 
 /**
