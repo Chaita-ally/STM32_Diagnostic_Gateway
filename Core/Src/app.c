@@ -2,6 +2,7 @@
 #include "app.h"
 #include "uart_driver.h"
 #include "stm32f4xx_nucleo.h"
+#include "diag_console.h"
 
 #include <stdint.h>
 
@@ -15,17 +16,12 @@ void App_Init(void)
     last_led_tick = HAL_GetTick();
 
     UART_Driver_SendString(
-        "\r\n"
-        "================================\r\n"
-        " STM32 Diagnostic Gateway\r\n"
-        " Board    : NUCLEO-F446RE\r\n"
-        " Firmware : v0.2.0\r\n"
-        " Status   : BOOT_OK\r\n"
-        "================================\r\n"
-        "\r\n"
-        "UART Echo Test Ready\r\n"
-        "Type characters to test.\r\n"
+        "\r\nSTM32 Diagnostic Gateway\r\n"
+        "Firmware: v0.3.0-dev\r\n"
     );
+
+    DiagConsole_Init();
+
 }
 
 void App_Run(void)
@@ -51,7 +47,6 @@ void App_Run(void)
 
     if (status == HAL_OK)
     {
-        /* Echo received character */
-        UART_Driver_Send(&rx_byte, 1U);
+        DiagConsole_ProcessByte(rx_byte);
     }
 }
