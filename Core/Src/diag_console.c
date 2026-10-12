@@ -52,7 +52,7 @@ static void DiagConsole_ExecuteCommand(const char *cmd)
     else if (strcmp(cmd, "version") == 0)
     {
         UART_Driver_SendString(
-            "Firmware: v0.3.0-dev\r\n"
+            "Firmware: v0.3.0-\r\n"
             "MCU: STM32F446RE\r\n"
             "Core: ARM Cortex-M4F\r\n"
         );
